@@ -22,13 +22,13 @@ export default function Home() {
     }
 
     const forceWalletConnection = (url:string) => {
-        if(!wallet){
-            setModalDesc('Please connect to the Wallet');
-            setOpenMsg(true);
-        }
-        else{
+        // if(!wallet){
+        //     setModalDesc('Please connect to the Wallet');
+        //     setOpenMsg(true);
+        // }
+        // else{
             window.location.replace(url);
-        }
+        //}
     }
 
   return (
@@ -41,16 +41,18 @@ export default function Home() {
                 <p className='company-welcome-text'>
                     Welcome to next generation crypto reward management system !
                 </p>
-                <Grid className='company-main-content' item xs={12} md={12}>
+                <Grid className='company-main-content' item xs={12} md={12} style={{ paddingTop : "80px"}}>
                     {/* <Link href="/company" passHref> */}
-                        <Button onClick={() => forceWalletConnection('/company')}>
-                            I am an Enterprise
-                        </Button>
+                    <div style={{ paddingRight : "120px"}}>
+                      <Button onClick={() => forceWalletConnection('/company')}>
+                        I am an Enterprise
+                      </Button>
+                    </div>
                     {/* </Link> */}
                     {/* <Link href="/user" passHref> */}
-                        <Button  onClick={() => forceWalletConnection('/user')}>
-                            I work for an Enterprise
-                        </Button>
+                      <Button  onClick={() => forceWalletConnection('/user')}>
+                        I work for an Enterprise
+                      </Button>
                     {/* </Link> */}
                 </Grid>
                 </Grid>

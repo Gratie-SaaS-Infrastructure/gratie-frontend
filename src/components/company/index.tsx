@@ -12,7 +12,7 @@ import { getCompanyUser } from '@/src/gratie_solana_contract/gratie_solana_user'
 import { Backdrop, Button, CircularProgress } from '@mui/material';
 
 import CompanyTab from '@/src/components/company/companyTab'
-import { getAllTiers } from '@/src/gratie_solana_contract/gratie_solana_tier';
+//import { getAllTiers } from '@/src/gratie_solana_contract/gratie_solana_tier';
 import { delay } from '@/src/utils/util';
 import Loading from '../Loading';
 import ModalBox from '../Modal';
@@ -40,11 +40,11 @@ export default function CompanyIndex() {
     handleLoaderToggle(true);
     const waiting = await delay(2000);
     setWaitingPeriodOver(true)
-    if(wallet && wallet?.adapter.publicKey){
+   // if(wallet && wallet?.adapter.publicKey){
         const publicKey:any = wallet?.adapter.publicKey;
         const program = await connectToGratieSolanaContract();
-        const tiers = await getAllTiers(program)
-        setTierList(tiers)
+        //const tiers = await getAllTiers(program)
+        //setTierList(tiers)
         const validLicense:any = await getCompanyLicense(program, publicKey)
         if (validLicense) {
             setCompanyLicense(validLicense);
@@ -59,11 +59,11 @@ export default function CompanyIndex() {
             }
         }
         setisDataFetched(true);
-    } else {
-      confirm("Please connect with your wallet");
-      console.log("wallet loading, please wait")
+  //  } else {
+      // confirm("Please connect with your wallet");
+      // console.log("wallet loading, please wait")
         // alert("wallet should be present")
-    }
+ //   }
     handleLoaderToggle(false);
     return;
   };
@@ -101,14 +101,14 @@ export default function CompanyIndex() {
   }, []);
 
   const getBlockChainData = async() => {
-    if(wallet && wallet?.adapter.publicKey){
+    //if(wallet && wallet?.adapter.publicKey){
       const data = await fetchContractData();
       console.log("data", data)
-    }
-    else {
-      confirm("Please connect with your wallet");
-      return false;
-    }
+    //  }
+    // else {
+    //   confirm("Please connect with your wallet");
+    //   return false;
+    // }
     
   }
 
@@ -129,15 +129,15 @@ export default function CompanyIndex() {
             </Container>
         }
         { 
-        isDataFetched && <Container className='' component="main" maxWidth="md">
+        isDataFetched && <Container className='' style={{maxWidth: "2000px"}} component="main" >
            { 
             <CompanyTab 
               showProfile={companyLicense ? true : false} 
-              handleChange = {fetchContractData} 
+              //handleChange = {fetchContractData} 
               license = {companyLicense} 
               reward = {companyReward} 
               users = {usersList}
-              tiers = {tierList}
+              //tiers = {tierList}
             /> 
            }
         </Container>

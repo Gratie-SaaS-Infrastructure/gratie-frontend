@@ -5,7 +5,6 @@ import NavBarWallet from './navBarWallet'
 
 import Company from '@/src/components/company/index';
 
-
 export default function Home() {
   return (
     <>

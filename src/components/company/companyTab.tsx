@@ -22,7 +22,7 @@ function TabPanel(props: TabPanelProps) {
 
   return (
     <div
-      style={{marginLeft: '0px'}}
+      style={{marginLeft: '0px', marginTop: '-32px'}}
       role="tabpanel"
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
@@ -58,16 +58,16 @@ export default function CompanyTab(props:any) {
   }
 
   return (
-    <Container className='admin-list' component="main" maxWidth="md">
+    <Container className='admin-list' style={{maxWidth: "2200px"}} component="main">
         <Box sx={{ width: '100%' }}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
             <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-              <Tab className={value==0 ? 'selected-tab' : 'non-selected-tab'} label="Subscription" {...a11yProps(0)} />
-              <Tab className={value==1 ? 'selected-tab' : 'non-selected-tab'} label="Create User" {...a11yProps(1)} />
-              <Tab className={value==2 ? 'selected-tab' : 'non-selected-tab'} label="Create Token" {...a11yProps(2)} />
+              <Tab style={{marginRight: "54px"}} className={value==0 ? 'selected-tab' : 'non-selected-tab'} label="Subscription" {...a11yProps(0)} />
+              <Tab style={{marginRight: "54px"}} className={value==1 ? 'selected-tab' : 'non-selected-tab'} label="Profile" {...a11yProps(1)} />
+              <Tab style={{marginRight: "54px"}} className={value==2 ? 'selected-tab' : 'non-selected-tab'} label="User" {...a11yProps(2)} />
+              {/* <Tab className={value==2 ? 'selected-tab' : 'non-selected-tab'} label="Create Token" {...a11yProps(2)} /> */}
               <Tab className={value==3 ? 'selected-tab' : 'non-selected-tab'} label="Issue reward" {...a11yProps(3)} />
-              <Tab className={value==4 ? 'selected-tab' : 'non-selected-tab'} label="Profile" {...a11yProps(3)} />
-              
+              {/* <Tab className={value==4 ? 'selected-tab' : 'non-selected-tab'} label="Profile" {...a11yProps(3)} /> */}
             </Tabs>
         </Box>
         <TabPanel value={value} index={0}>
