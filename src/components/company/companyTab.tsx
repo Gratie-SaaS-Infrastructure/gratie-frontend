@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Grid from '@mui/material/Grid';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
@@ -22,7 +23,7 @@ function TabPanel(props: TabPanelProps) {
 
   return (
     <div
-      style={{marginLeft: '0px', marginTop: '-32px'}}
+      
       role="tabpanel"
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
@@ -32,7 +33,7 @@ function TabPanel(props: TabPanelProps) {
       {value === index && (
         <Box sx={{ p: 0, ml: 0}}>
           <Typography>{children}</Typography>
-        </Box>
+       </Box>
       )}
     </div>
   );
@@ -58,10 +59,10 @@ export default function CompanyTab(props:any) {
   }
 
   return (
-    <Container className='admin-list' style={{maxWidth: "2200px"}} component="main">
-        <Box sx={{ width: '100%' }}>
+    <Grid className='admin-list' style={{maxWidth: "2200px"}} component="main" container>
+       <Box sx={{ width: '100%' }}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-            <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+            <Tabs style={{justifyContent: "center"}} value={value} onChange={handleChange} aria-label="basic tabs example">
               <Tab style={{marginRight: "54px"}} className={value==0 ? 'selected-tab' : 'non-selected-tab'} label="Subscription" {...a11yProps(0)} />
               <Tab style={{marginRight: "54px"}} className={value==1 ? 'selected-tab' : 'non-selected-tab'} label="Profile" {...a11yProps(1)} />
               <Tab style={{marginRight: "54px"}} className={value==2 ? 'selected-tab' : 'non-selected-tab'} label="User" {...a11yProps(2)} />
@@ -70,32 +71,35 @@ export default function CompanyTab(props:any) {
               {/* <Tab className={value==4 ? 'selected-tab' : 'non-selected-tab'} label="Profile" {...a11yProps(3)} /> */}
             </Tabs>
         </Box>
-        <TabPanel value={value} index={0}>
-           {
-             <Subscription handleClickTab={handleClickTab}/>
-           }
-        </TabPanel>
-        <TabPanel value={value} index={1}>
-            {
-              <Users {...props}/>
-            }
-        </TabPanel>
-        <TabPanel value={value} index={2}>
-            {
-             <Token {...props}/>
-            }
-        </TabPanel>
-        <TabPanel value={value} index={3}>
-            {
-              <ListUsers users = {props.users} license={props.license}/>
-            }
-        </TabPanel>
-        <TabPanel value={value} index={4}>
-            {
-              <Profile companyLicense = {props.license}/>
-            }
-        </TabPanel>
-        </Box>
-    </Container>
+        <Grid item xs={12}>
+          <TabPanel value={value} index={0}>
+              {
+                <Subscription handleClickTab={handleClickTab}/>
+              }
+          </TabPanel>
+          </Grid>
+          <Grid item xs={12}>
+          <TabPanel value={value} index={1}>
+              {
+                <Profile {...props}/>
+              }
+          </TabPanel>
+          </Grid>
+          <Grid item xs={12}>
+          <TabPanel value={value} index={2}>
+              {
+                <Users {...props}/>
+              }
+          </TabPanel>
+          </Grid>
+          <Grid item xs={12}>
+          <TabPanel value={value} index={3}>
+              {
+                <ListUsers users = {props.users} license={props.license}/>
+              }
+          </TabPanel>
+          </Grid>
+      </Box>
+    </Grid>
   );
 }

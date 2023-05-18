@@ -71,3 +71,82 @@
         /* width:65%; */
     }
 }
+
+.MuiTabs-flexContainer.css-heg063-MuiTabs-flexContainer{
+    justify-content: center;
+}
+
+.MuiTabs-flexContainer.css-heg063-MuiTabs-flexContainer button{
+    padding: 21px 21px;
+    background: #046603;
+    border: 2px solid #030302;
+    box-shadow: inset 10px 6px 25px rgba(255, 255, 255, 0.75);
+    border-radius: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 245px !important;
+    height: 71px !important;
+
+    font-family: 'Futura Md BT';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 29px;
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.MuiTabs-flexContainer.css-heg063-MuiTabs-flexContainer button:hover{
+    background: #046603 !important;
+    color: rgba(255, 255, 255, 1);
+}
+.MuiTabs-scroller.MuiTabs-fixed.css-jpln7h-MuiTabs-scroller {
+    margin: 40px 0px !important;
+}
+.price-box{
+    width: 260px !important;
+    height: 428px;
+    box-shadow: inset 10px 6px 25px rgba(255, 247, 247, 0.8) !important;
+    border-radius: 28px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin: 0px auto; */
+    margin-bottom: 30px;
+}
+
+button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.social-button.css-w8u1qx-MuiButtonBase-root-MuiButton-root {
+    margin-bottom: 75px;
+}
+h6.MuiTypography-root.MuiTypography-h6.css-89dni0-MuiTypography-root {
+    margin-bottom: 10px;
+}
+.MuiGrid-root.MuiGrid-container.css-1ywdwwt-MuiGrid-root {
+    justify-content: space-around;
+}
+
+svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.css-i4bv87-MuiSvgIcon-root {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 8px;
+}
+span.MuiTypography-root.MuiTypography-body1.MuiListItemText-primary.css-jcbzg6-MuiTypography-root{
+    color: rgba(255, 255, 255, 0.8);
+}
+.css-cveggr-MuiListItemIcon-root{
+    min-width: auto;
+    margin-right: 10px;
+}
+ul.MuiList-root.MuiList-padding.css-h4y409-MuiList-root {
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+.nft-price {
+    border-radius: 50%;
+}
+.buy-form{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100% !important;
+}

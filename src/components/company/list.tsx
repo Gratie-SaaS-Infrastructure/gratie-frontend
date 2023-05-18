@@ -103,8 +103,25 @@ export default function List(props:any) {
               noWrap
               variant="h6"
               className='form-label'>
-              Users Not Found</Typography>
+              Hello</Typography>
             }
+            <Box
+                component="form"
+                sx={{
+                  '& > :not(style)': { m: 1, width: '25ch' },
+                }}
+                noValidate
+                autoComplete="off"
+              >
+                <div className='buy-form'>
+                  <Typography variant="subtitle2">Company Name</Typography>
+                  <TextField id="outlined-basic"  variant="outlined" />
+                </div>
+                <div className='buy-form'>
+                  <Typography variant="subtitle2">Company Email</Typography>
+                  <TextField id="outlined-basic"  variant="outlined" />
+                </div>
+              </Box>
           </Box>
         </CardContent>
           </Box>
