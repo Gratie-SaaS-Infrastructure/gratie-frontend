@@ -16,6 +16,19 @@ import { AES } from 'crypto-js';
 import { delay } from '@/src/utils/util';
 import Loading from '../Loading';
 import ModalBox from '../Modal';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TablePagination from '@mui/material/TablePagination';
+import TableRow from '@mui/material/TableRow';
+import TableSortLabel from '@mui/material/TableSortLabel';
+import Checkbox from '@mui/material/Checkbox';
+
+import InputAdornment from '@mui/material/InputAdornment';
+import SearchIcon from '@mui/icons-material/Search';
+
 
 
 export default function CreateUsers(props: any) {
@@ -25,7 +38,7 @@ export default function CreateUsers(props: any) {
   const [encryptedPassword, setEncryptedPassword] = React.useState('');
   const [salt, setSalt] = React.useState('salt');
   const [password, setPassword] = React.useState('');
-  
+
   const [openMsg, setOpenMsg] = React.useState(false);
   const [openLoading, setOpenLoading] = React.useState(false);
   const [modalTitle, setModalTitle] = React.useState('');
@@ -36,7 +49,7 @@ export default function CreateUsers(props: any) {
     setModalTitle('')
     setModalDesc('');
   }
-  const handleLoaderToggle = (status:boolean) => {
+  const handleLoaderToggle = (status: boolean) => {
     setOpenLoading(status)
   }
 
@@ -49,7 +62,7 @@ export default function CreateUsers(props: any) {
     }
     const userId = sha256.hash(email).substring(0, 16);
 
-    if(!props.license){
+    if (!props.license) {
       alert('Please create company license before inviting user')
       return false;
     }
@@ -69,7 +82,7 @@ export default function CreateUsers(props: any) {
         encryptedPasswordAlgorithm: 0,
         encryptedPasswordSalt: salt,
       });
-      
+
       console.log(user)
 
       try {
@@ -98,146 +111,84 @@ export default function CreateUsers(props: any) {
     setEncryptedPassword(pw);
   };
 
+  const label = { inputProps: { 'aria-label': 'Select' } };
 
   return (
     <Container sx={{ mt: 3 }} className="create-user-container">
-      
+      <div className="btn-group">
+        <Button variant="outlined">User Request</Button>
+        <Button variant="outlined">Existing Users </Button>
+      </div>
       <Box className="form-box">
         <CardContent>
-          <form className='form'>
-            <Grid container spacing={1} sx={{ mt: 5, mb: 5 }}>
-              <Grid item xs={12} md={7}>
-                <Typography
-                  noWrap
-                  variant="h6"
-                  className='form-label'>
-                  User Email
-                </Typography>
-              </Grid>
-              <Grid item xs={12} md={5} className="user-grid">
-                <TextField
-                  fullWidth
-                  type='text'
-                  id="email"
-                  autoComplete='off'
-                  required
-                  onChange={(e) => setEmail(e.target.value)}
-                  value={email}
-                  className='form-textfield'
-                  focused sx={{ input: { color: '#fff', fontSize: '20px' } }}
-                />
-              </Grid>
-              <Grid item xs={12} md={7}>
-                <Typography
-                  noWrap
-                  variant="h6"
-                  className='form-label'>
-                  encryption algorithm
-                </Typography>
-              </Grid>
-              <Grid item xs={12} md={5} className="user-grid">
-                <TextField
-                  fullWidth
-                  type='text'
-                  id="email"
-                  autoComplete='off'
-                  required
-                  value={'script-pkdf (keyLen 32)'}
-                  className='form-textfield'
-                  helperText='find in company database'
-                  focused sx={{ input: { color: '#fff', fontSize: '20px' } }}
-                />
-              </Grid>
-              <Grid item xs={12} md={7}>
-                <Typography
-                  noWrap
-                  variant="h6"
-                  className='form-label'>
-                  salt
-                </Typography>
-              </Grid>
-              <Grid item xs={12} md={5} className="user-grid">
-                <TextField
-                  fullWidth
-                  type='text'
-                  id="email"
-                  autoComplete='off'
-                  required
-                  onChange={(e) => setSalt(e.target.value)}
-                  value={salt}
-                  className='form-textfield'
-                  helperText='find in company database'
-                  focused sx={{ input: { color: '#fff', fontSize: '20px' } }}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <Typography variant="h6">
-                  Password is only here for testing, usually the company would just add the salt, encryption algorithm and encrypted password here.
-                  right now the encrypted password is also generated for convenience and testing purposes.
-                </Typography>
-              </Grid>
-              <Grid item xs={12} md={4}>
-                <Typography
-                  noWrap
-                  variant="h6"
-                  className='form-label'>
-                  password (testing)
-                </Typography>
-              </Grid>
-              <Grid item xs={12} md={6} className="user-grid">
-                <TextField
-                  fullWidth
-                  type='text'
-                  id="email"
-                  autoComplete='off'
-                  required
-                  onChange={(e) => setPassword(e.target.value)}
-                  value={password}
-                  className='form-textfield'
-                  helperText='find in company database'
-                  focused sx={{ input: { color: '#fff', fontSize: '20px' } }}
-                />
-              </Grid>
-              <Grid item md={2}>
-                <Button onClick={generateEncryptedPassword} variant='contained' color='success'>
-                  encrypt
+          <div className='card-search-wrap'>
+            <TextField className='search_bar'
+              variant="outlined"
+              value=""
+              placeholder='Search the user'
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <SearchIcon />
+                  </InputAdornment>
+                ),
+              }}
+            />
+          </div>
+          <div className='table-wrap'>
+            <TableContainer>
+              <Table aria-label="My Table">
+                <TableHead>
+                  <TableRow>
+                    <TableCell>Name</TableCell>
+                    <TableCell>Email</TableCell>
+                    <TableCell>Wallet address</TableCell>
+                    <TableCell>Select <Checkbox {...label} /></TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  <TableRow>
+                    <TableCell>abc</TableCell>
+                    <TableCell>abc@gmail.com</TableCell>
+                    <TableCell>0X...4532</TableCell>
+                    <TableCell><Checkbox {...label} /></TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>abc</TableCell>
+                    <TableCell>abc@gmail.com</TableCell>
+                    <TableCell>0X...4532</TableCell>
+                    <TableCell><Checkbox {...label} defaultChecked /></TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>abc</TableCell>
+                    <TableCell>abc@gmail.com</TableCell>
+                    <TableCell>0X...4532</TableCell>
+                    <TableCell><Checkbox {...label} defaultChecked /></TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>abc</TableCell>
+                    <TableCell>abc@gmail.com</TableCell>
+                    <TableCell>0X...4532</TableCell>
+                    <TableCell><Checkbox {...label} defaultChecked /></TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+              <div className='del-btn-wrap'>
+                <Button variant="text"><svg width="65" height="65" viewBox="0 0 85 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="42.5" cy="42.5" r="41.5" stroke="#FF0000" stroke-width="2" />
+                  <path d="M58.6245 35.9883L55.0412 64.6549H29.9578L26.3745 35.9883" stroke="#FF0000" stroke-width="1.71429" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M21 28.8218H64" stroke="#FF0000" stroke-width="1.71429" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M33.3989 27.7825V21.5833C33.3989 20.633 33.7765 19.7215 34.4485 19.0495C35.1205 18.3775 36.0319 18 36.9823 18H47.7323C48.6826 18 49.5941 18.3775 50.2661 19.0495C50.9381 19.7215 51.3156 20.633 51.3156 21.5833V28.75" stroke="#FF0000" stroke-width="1.71429" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M39 40L39.3636 56M47 40V56" stroke="#FF0000" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
                 </Button>
-              </Grid>
-              <Grid item xs={12} md={7}>
-                <Typography
-                  noWrap
-                  variant="h6"
-                  className='form-label'>
-                  User Encrypted Password
-                </Typography>
-              </Grid>
-              <Grid item xs={12} md={5} className="user-grid">
-                <TextField
-                  fullWidth
-                  type='text'
-                  id="email"
-                  autoComplete='off'
-                  required
-                  onChange={(e) => setEncryptedPassword(e.target.value)}
-                  value={encryptedPassword}
-                  className='form-textfield'
-                  helperText='find in company database'
-                  focused sx={{ input: { color: '#fff', fontSize: '20px' } }}
-                />
-              </Grid>
-            </Grid>
-            <Button onClick={handleClick} variant='contained' className='create-token-btn' sx={{ mt: 2, mb: 5 }}>
-              Add User
-            </Button>
-          </form>
-          {showSuccessMsg && <Box>
-            User Id has been sucessfully created 
-            Service providers can mint their NFT to claim rewards using their Email Id  
-          </Box>}
+              </div>
+            </TableContainer>
+          </div>
         </CardContent>
       </Box>
       <Loading open={openLoading} handleClose={handleLoaderToggle} />
-      <ModalBox open={openMsg} handleClose={handleModalClose} heading={modalTitle} description={modalDesc}/>
+      <ModalBox open={openMsg} handleClose={handleModalClose} heading={modalTitle} description={modalDesc} />
     </Container>
   )
 }

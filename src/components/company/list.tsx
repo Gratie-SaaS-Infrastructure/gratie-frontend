@@ -98,13 +98,6 @@ export default function List(props:any) {
               }    
           </Box>
           <Box>
-            {
-              props.users.length == 0 && <Typography
-              noWrap
-              variant="h6"
-              className='form-label'>
-              Hello</Typography>
-            }
             <Box
                 component="form"
                 sx={{
@@ -120,6 +113,13 @@ export default function List(props:any) {
                 <div className='buy-form'>
                   <Typography variant="subtitle2">Company Email</Typography>
                   <TextField id="outlined-basic"  variant="outlined" />
+                </div>
+                <div className='buy-form'>
+                  <Typography variant="subtitle2">NFT Tier</Typography>
+                  <Typography variant="subtitle2" className="sub-buy-nft">Paradise</Typography>
+                </div>
+                <div className='center-btn'>
+                  <Button variant="contained">Connect wallet</Button>
                 </div>
               </Box>
           </Box>

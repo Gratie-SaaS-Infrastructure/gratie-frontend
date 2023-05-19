@@ -1,10 +1,19 @@
 /* @tailwind base;
 @tailwind components;
 @tailwind utilities; */
+@import url(./fonts/stylesheet.css);
 
 
 :root {
-  
+  --font-B: futura_md_btbold;
+  --font-BI: futura_md_btbold_italic;
+  --font-M: futura_md_btmedium;
+  --font-MI: futura_md_btmedium_italic;
+  --font-B2: futura_md_btbold;
+  --font-BI2: futura_md_btbold_italic;
+  --font-M2: futura_md_btmedium;
+  --font-B: futura_md_btbold;
+  --font-B: futura_md_btbold;
   font-family: 'Book antique regular' !important;
   --max-width: 1100px;
   --border-radius: 12px;
@@ -50,6 +59,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  font-family: var(--font-M);
   /* font-family: 'Book antique' !important; */
 }
 
@@ -69,25 +79,34 @@ h1 {
   font-size: 60px;
   color: #fff;
   opacity: 100%;
+  font-family: var(--font-B);
 }
 h2 {
   font-size: 50px;
   color: #fff;
   opacity: 80%;
+  font-family: var(--font-B);
 }
 h5 {
   font-size: 38px;
   color: #00FF01;
   opacity: 100%;
+  font-family: var(--font-B);
 }
 h6 {
   font-size: 30px;
   color: #FFF;
   opacity: 100%;
+  font-family: var(--font-M);
 }
 a {
   color: inherit;
   text-decoration: none;
+  font-family: var(--font-M);
+}
+
+p{
+  font-family: var(--font-M);
 }
 
 .navbar{

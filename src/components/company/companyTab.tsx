@@ -99,6 +99,13 @@ export default function CompanyTab(props:any) {
               }
           </TabPanel>
           </Grid>
+          <Grid item xs={12}>
+          <TabPanel value={value} index={4}>
+              {
+                <Profile companyLicense = {props.license}/>
+              }
+          </TabPanel>
+        </Grid>
       </Box>
     </Grid>
   );

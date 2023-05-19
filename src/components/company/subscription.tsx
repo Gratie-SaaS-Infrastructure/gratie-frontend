@@ -35,7 +35,7 @@ export default function Subscription(props: any) {
                   fontFamily: 'Book antique',
                   color: '#d9d9d9',
                   textAlign: "center"
-                }} >3
+                }} >3 SQL
                 <img width={30} height={21} alt="price1" src="/images/Solona icon.png" />
               </Typography>
               <br />
@@ -50,19 +50,19 @@ export default function Subscription(props: any) {
               <ListItemIcon>
                 <CircleRoundedIcon />
               </ListItemIcon>
-              <ListItemText primary="Free Users : 3" />
+              <ListItemText primary="Inbox" />
             </ListItem>
             <ListItem disablePadding>
               <ListItemIcon>
                 <CircleRoundedIcon />
               </ListItemIcon>
-              <ListItemText primary="No additional user" />
+              <ListItemText primary="Inbox" />
             </ListItem>
             <ListItem disablePadding>
               <ListItemIcon>
                 <CircleRoundedIcon />
               </ListItemIcon>
-              <ListItemText primary="No verification" />
+              <ListItemText primary="Inbox" />
             </ListItem>
           </List>
         </Grid>
@@ -86,7 +86,7 @@ export default function Subscription(props: any) {
                   fontFamily: 'Book antique',
                   color: '#d9d9d9',
                   textAlign: "center"
-                }} >3
+                }} >3 SQL
                 <img width={30} height={21} alt="price1" src="/images/Solona icon.png" />
               </Typography>
               <br />
@@ -187,7 +187,7 @@ export default function Subscription(props: any) {
                   fontFamily: 'Book antique',
                   color: '#d9d9d9',
                   textAlign: "center"
-                }} >3
+                }} >3 SQL
                 <img width={30} height={21} alt="price1" src="/images/Solona icon.png" />
               </Typography>
               <br />
@@ -234,7 +234,7 @@ export default function Subscription(props: any) {
                   fontFamily: 'Book antique',
                   color: '#d9d9d9',
                   textAlign: "center"
-                }} >3
+                }} >3 SQL
                 <img width={30} height={21} alt="price1" src="/images/Solona icon.png" />
               </Typography>
               <br />
@@ -281,7 +281,7 @@ export default function Subscription(props: any) {
                   fontFamily: 'Book antique',
                   color: '#d9d9d9',
                   textAlign: "center"
-                }} >3
+                }} >3 SQL
                 <img width={30} height={21} alt="price1" src="/images/Solona icon.png" />
               </Typography>
               <br />
