@@ -332,3 +332,60 @@ button.MuiButtonBase-root.MuiButton-root.MuiButton-outlined.MuiButton-outlinedPr
 .form-box.MuiBox-root.css-0 {
     margin-bottom: 50px;
 }
+
+.R-btn{
+    border: 1px solid #00FF01 !important;
+    color: #fff !important;
+    padding: 8px 40px;
+    border-radius: 22px;
+    opacity: 0.6;
+    font-family: Book Antiqua !important;
+    font-size: 16px;
+    line-height: 29px;
+}
+.R-btn:hover{
+    opacity: 1;
+}
+.edit-btn-wrap{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+.edit-btn{
+    width: 56px;
+    height: 62px;
+    border-radius: 50% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #006900 !important;
+    border: 1px solid #006900 !important;
+}
+.edit-btn:hover{
+    border: 1px solid #00FF01 !important;
+    background: transparent !important;
+}
+form.MuiBox-root.css-1hnm6b6 {
+    margin-top: 0px;
+}
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+    padding: 9px 14px;
+    color: #fff;
+}
+.MuiOutlinedInput-notchedOutline {
+    border-radius: 27px !important;
+    height: 52px;
+}
+.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+    padding: 12.5px 14px;
+}
+label.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.css-w8u1qx-MuiButtonBase-root-MuiButton-root {
+    width: 52px;
+    height: 61px;
+    border: 1px solid #00FF01;
+    box-shadow: inset 2px 4px 10px rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+}
+.MuiGrid-root.MuiGrid-container.MuiGrid-spacing-xs-1.css-45q62m-MuiGrid-root {
+    align-items: center;
+}
