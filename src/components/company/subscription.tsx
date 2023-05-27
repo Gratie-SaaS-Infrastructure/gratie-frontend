@@ -41,7 +41,7 @@ export default function Subscription(props: any) {
               <br />
               <Button
                 variant='contained'
-                onClick={() => props.handleClickTab(3)}
+                onClick={() => props.handleClickTab(4)}
                 className="social-button"> Buy Now <Arrow sx={{ color: '#fff' }} /> </Button>
             </div>
           </Box>
@@ -66,8 +66,6 @@ export default function Subscription(props: any) {
             </ListItem>
           </List>
         </Grid>
-
-
         <Grid item xs={12} md={6} lg={4}>
           <Box className="price-box price-box2">
             <div className='card-box'>
@@ -117,7 +115,6 @@ export default function Subscription(props: any) {
             </ListItem>
           </List>
         </Grid>
-
         <Grid item xs={12} md={6} lg={4}>
           <Box className="price-box price-box3" >
             <div className='card-box'>
@@ -167,7 +164,6 @@ export default function Subscription(props: any) {
             </ListItem>
           </List>
         </Grid>
-
         <Grid item xs={12} md={6} lg={4}>
           <Box className="price-box price-box4">
             <div className='card-box'>

@@ -63,11 +63,11 @@ export default function CompanyTab(props:any) {
        <Box sx={{ width: '100%' }}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
             <Tabs style={{justifyContent: "center"}} value={value} onChange={handleChange} aria-label="basic tabs example">
-              <Tab style={{marginRight: "54px"}} className={value==0 ? 'selected-tab' : 'non-selected-tab'} label="Subscription" {...a11yProps(0)} />
+              <Tab style={{marginRight: "54px"}} className={(value==0 || 4) ? 'selected-tab' : 'non-selected-tab'} label="Subscription" {...a11yProps(0)} />
               <Tab style={{marginRight: "54px"}} className={value==1 ? 'selected-tab' : 'non-selected-tab'} label="Profile" {...a11yProps(1)} />
               <Tab style={{marginRight: "54px"}} className={value==2 ? 'selected-tab' : 'non-selected-tab'} label="User" {...a11yProps(2)} />
-              {/* <Tab className={value==2 ? 'selected-tab' : 'non-selected-tab'} label="Create Token" {...a11yProps(2)} /> */}
               <Tab className={value==3 ? 'selected-tab' : 'non-selected-tab'} label="Issue reward" {...a11yProps(3)} />
+              {/* <Tab className={value==2 ? 'selected-tab' : 'non-selected-tab'} label="Create Token" {...a11yProps(2)} /> */}
               {/* <Tab className={value==4 ? 'selected-tab' : 'non-selected-tab'} label="Profile" {...a11yProps(3)} /> */}
             </Tabs>
         </Box>
@@ -95,14 +95,15 @@ export default function CompanyTab(props:any) {
           <Grid item xs={12}>
           <TabPanel value={value} index={3}>
               {
-                <ListUsers users = {props.users} license={props.license}/>
+                <Token users = {props.users} license={props.license}/>
               }
           </TabPanel>
           </Grid>
           <Grid item xs={12}>
           <TabPanel value={value} index={4}>
               {
-                <Profile companyLicense = {props.license}/>
+                <ListUsers users = {props.users} license={props.license}/>
+                // <Profile companyLicense = {props.license}/>
               }
           </TabPanel>
         </Grid>

@@ -2,13 +2,23 @@ import * as React from 'react';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
-import {CardContent} from '@mui/material';
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
+import { Akord } from '@akord/akord-js'
+import { useState } from 'react'
+import { sha256 } from "@project-serum/anchor/dist/cjs/utils";
 
+
+import { createUser } from '@/src/gratie_solana_contract/gratie_solana_user';
 import { connectToGratieSolanaContract } from '@/src/gratie_solana_contract/gratie_solana_contract';
+import { faker } from '@faker-js/faker';
 import { useWallet } from '@solana/wallet-adapter-react';
+import { Card, CardActionArea, CardContent, CardMedia } from '@mui/material';
 import { transferTokensToUser } from '@/src/gratie_solana_contract/gratie_solana_company';
 import { BN } from '@project-serum/anchor';
 import ModalBox from '../Modal';
@@ -66,6 +76,7 @@ export default function List(props:any) {
 
   return (
     <div className=''>
+
       <React.Fragment>
         <Container component="main" maxWidth="md" sx={{ mt: 4}}>
           <Box className="form-box">

@@ -389,3 +389,24 @@ label.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedP
 .MuiGrid-root.MuiGrid-container.MuiGrid-spacing-xs-1.css-45q62m-MuiGrid-root {
     align-items: center;
 }
+.Metamask-link{
+    margin-bottom: 18px;
+    text-decoration: none;
+    display: block;
+}
+.Metamask-list{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #061006;
+    box-shadow: 0px 2px 7px #FFFFFF;
+    border-radius: 100px;
+    padding: 8px 30px;
+}
+.Metamask-left{
+    display: flex;
+    align-items: center;
+}
+.Metamask-icon{
+    margin-right: 16px;
+}
