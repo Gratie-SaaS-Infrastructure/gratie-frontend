@@ -7,10 +7,8 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 
 import Token from "./token";
-import Profile from "./profile";
+import Profile from "./claim-token";
 import Users from "./users";
-import Subscription from "./subscription";
-import ListUsers from "./list";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -46,7 +44,7 @@ function a11yProps(index: number) {
 }
 
 export default function CompanyTab(props: any) {
-  const [value, setValue] = React.useState(props.showProfile ? 4 : 0);
+  const [value, setValue] = React.useState(props.showProfile ? 1 : 1);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -73,36 +71,23 @@ export default function CompanyTab(props: any) {
           >
             <Tab
               style={{ marginRight: "54px" }}
-              className={value == 0 || 4 ? "selected-tab" : "non-selected-tab"}
-              label="Subscription"
-              {...a11yProps(0)}
-            />
-            <Tab
-              style={{ marginRight: "54px" }}
               className={value == 1 ? "selected-tab" : "non-selected-tab"}
-              label="Profile"
+              label="Request NFT"
               {...a11yProps(1)}
             />
             <Tab
               style={{ marginRight: "54px" }}
               className={value == 2 ? "selected-tab" : "non-selected-tab"}
-              label="User"
+              label="Claim Token"
               {...a11yProps(2)}
             />
             <Tab
               className={value == 3 ? "selected-tab" : "non-selected-tab"}
-              label="Issue reward"
+              label="Profile"
               {...a11yProps(3)}
             />
-            {/* <Tab className={value==2 ? 'selected-tab' : 'non-selected-tab'} label="Create Token" {...a11yProps(2)} /> */}
-            {/* <Tab className={value==4 ? 'selected-tab' : 'non-selected-tab'} label="Profile" {...a11yProps(3)} /> */}
           </Tabs>
         </Box>
-        <Grid item xs={12}>
-          <TabPanel value={value} index={0}>
-            {<Subscription handleClickTab={handleClickTab} />}
-          </TabPanel>
-        </Grid>
         <Grid item xs={12}>
           <TabPanel value={value} index={1}>
             {<Profile {...props} />}
@@ -116,14 +101,6 @@ export default function CompanyTab(props: any) {
         <Grid item xs={12}>
           <TabPanel value={value} index={3}>
             {<Token users={props.users} license={props.license} />}
-          </TabPanel>
-        </Grid>
-        <Grid item xs={12}>
-          <TabPanel value={value} index={4}>
-            {
-              <ListUsers users={props.users} license={props.license} />
-              // <Profile companyLicense = {props.license}/>
-            }
           </TabPanel>
         </Grid>
       </Box>
