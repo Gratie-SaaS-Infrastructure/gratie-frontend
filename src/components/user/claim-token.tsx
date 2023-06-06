@@ -1,15 +1,9 @@
 import * as React from "react";
 
 import Container from "@mui/material/Container";
-import {
-  Box,
-  Button,
-  Grid,
-  Typography,
-} from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 
-export default function CreateUsers(props: any) {
-
+export default function ClaimToken(props: any) {
   return (
     <Container sx={{ mt: 3 }} className="create-user-container">
       <Box className="form-box" style={{ width: "600px", margin: "0px auto" }}>

@@ -4,11 +4,10 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
 
-import Token from "./token";
-import Profile from "./claim-token";
-import Users from "./users";
+import RequestNft from "./request-nft";
+import ClaimToken from "./claim-token";
+import Profile from "./profile";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -43,8 +42,8 @@ function a11yProps(index: number) {
   };
 }
 
-export default function CompanyTab(props: any) {
-  const [value, setValue] = React.useState(props.showProfile ? 1 : 1);
+export default function userTab(props: any) {
+  const [value, setValue] = React.useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -73,34 +72,34 @@ export default function CompanyTab(props: any) {
               style={{ marginRight: "54px" }}
               className={value == 1 ? "selected-tab" : "non-selected-tab"}
               label="Request NFT"
-              {...a11yProps(1)}
+              {...a11yProps(0)}
             />
             <Tab
               style={{ marginRight: "54px" }}
               className={value == 2 ? "selected-tab" : "non-selected-tab"}
               label="Claim Token"
-              {...a11yProps(2)}
+              {...a11yProps(1)}
             />
             <Tab
               className={value == 3 ? "selected-tab" : "non-selected-tab"}
               label="Profile"
-              {...a11yProps(3)}
+              {...a11yProps(2)}
             />
           </Tabs>
         </Box>
         <Grid item xs={12}>
+          <TabPanel value={value} index={0}>
+            {<RequestNft/>}
+          </TabPanel>
+        </Grid>
+        <Grid item xs={12}>
           <TabPanel value={value} index={1}>
-            {<Profile {...props} />}
+            {<ClaimToken/>}
           </TabPanel>
         </Grid>
         <Grid item xs={12}>
           <TabPanel value={value} index={2}>
-            {<Users {...props} />}
-          </TabPanel>
-        </Grid>
-        <Grid item xs={12}>
-          <TabPanel value={value} index={3}>
-            {<Token users={props.users} license={props.license} />}
+            {<Profile/>}
           </TabPanel>
         </Grid>
       </Box>
