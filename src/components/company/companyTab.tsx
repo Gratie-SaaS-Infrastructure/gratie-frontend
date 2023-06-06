@@ -4,7 +4,6 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
 
 import Token from "./token";
 import Profile from "./profile";
@@ -94,8 +93,6 @@ export default function CompanyTab(props: any) {
               label="Issue reward"
               {...a11yProps(3)}
             />
-            {/* <Tab className={value==2 ? 'selected-tab' : 'non-selected-tab'} label="Create Token" {...a11yProps(2)} /> */}
-            {/* <Tab className={value==4 ? 'selected-tab' : 'non-selected-tab'} label="Profile" {...a11yProps(3)} /> */}
           </Tabs>
         </Box>
         <Grid item xs={12}>
@@ -105,25 +102,22 @@ export default function CompanyTab(props: any) {
         </Grid>
         <Grid item xs={12}>
           <TabPanel value={value} index={1}>
-            {<Profile {...props} />}
+            {<Profile/>}
           </TabPanel>
         </Grid>
         <Grid item xs={12}>
           <TabPanel value={value} index={2}>
-            {<Users {...props} />}
+            {<Users/>}
           </TabPanel>
         </Grid>
         <Grid item xs={12}>
           <TabPanel value={value} index={3}>
-            {<Token users={props.users} license={props.license} />}
+            {<Token/>}
           </TabPanel>
         </Grid>
         <Grid item xs={12}>
           <TabPanel value={value} index={4}>
-            {
-              <ListUsers users={props.users} license={props.license} />
-              // <Profile companyLicense = {props.license}/>
-            }
+            {<ListUsers/>}
           </TabPanel>
         </Grid>
       </Box>
